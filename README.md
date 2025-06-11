@@ -52,7 +52,8 @@ This project predicts the most suitable crop to grow based on environmental cond
 
 ## Screenshot
 
-![App Preview](screenshot.png)
+![App Preview](Screenshot(1).png)
+![App Preview](Screenshot(2).png)
 
 ---
 
