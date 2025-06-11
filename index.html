@@ -1,19 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head><title>Crop Predictor</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Recommendation</title>
+    <style>
+        body {
+        background-image: url("{{ url_for('static', filename='images/crop_image.webp') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #27ae60;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        .result img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
 <body>
-    <h2>Enter Soil Parameters</h2>
-    <form method="post" action="/predict">
-        <input name="nitrogen" placeholder="Nitrogen" required><br>
-        <input name="phosphorus" placeholder="Phosphorus" required><br>
-        <input name="potassium" placeholder="Potassium" required><br>
-        <input name="temperature" placeholder="Temperature" required><br>
-        <input name="humidity" placeholder="Humidity" required><br>
-        <input name="ph" placeholder="pH" required><br>
-        <input name="rainfall" placeholder="Rainfall" required><br>
-        <button type="submit">Submit</button>
+
+<div class="container">
+    <h2>🌾 Crop Recommendation</h2>
+    <form action="/predict" method="post">
+        <label for="nitrogen">Nitrogen (N)</label>
+        <input type="number" step="any" name="nitrogen" required>
+
+        <label for="phosphorus">Phosphorus (P)</label>
+        <input type="number" step="any" name="phosphorus" required>
+
+        <label for="potassium">Potassium (K)</label>
+        <input type="number" step="any" name="potassium" required>
+
+        <label for="temperature">Temperature (°C)</label>
+        <input type="number" step="any" name="temperature" required>
+
+        <label for="humidity">Humidity (%)</label>
+        <input type="number" step="any" name="humidity" required>
+
+        <label for="ph">pH Level</label>
+        <input type="number" step="any" name="ph" required>
+
+        <label for="rainfall">Rainfall (mm)</label>
+        <input type="number" step="any" name="rainfall" required>
+
+        <input type="submit" value="Predict Crop">
     </form>
-    <p>{{ prediction_text }}</p>
+
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+
+    {% if crop_image %}
+    <div class="result">
+        <img src="data:image/png;base64,{{ crop_image }}" alt="Generated Crop Image">
+    </div>
+    {% endif %}
+</div>
+
 </body>
 </html>
 
