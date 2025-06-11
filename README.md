@@ -1,10 +1,10 @@
-# 🌾 AI-Based Crop Recommendation System
+#  AI-Based Crop Recommendation System
 
 This project predicts the most suitable crop to grow based on environmental conditions like nitrogen, phosphorus, potassium, temperature, humidity, pH, and rainfall. It uses machine learning and a Flask-based web interface for easy user interaction.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Machine learning model trained on 2200+ samples
 - Takes real-time user input for soil and weather parameters
@@ -14,7 +14,7 @@ This project predicts the most suitable crop to grow based on environmental cond
 
 ---
 
-## 📊 Technologies Used
+##  Technologies Used
 
 - Python
 - Scikit-learn
@@ -25,7 +25,7 @@ This project predicts the most suitable crop to grow based on environmental cond
 
 ---
 
-## 🧠 Model Details
+##  Model Details
 
 - Trained on `Crop_recommendation.csv` dataset
 - Used `LabelEncoder` to encode target crop labels
@@ -35,7 +35,7 @@ This project predicts the most suitable crop to grow based on environmental cond
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```
 ├── app.py                   # Flask app to serve model
@@ -50,13 +50,13 @@ This project predicts the most suitable crop to grow based on environmental cond
 
 ---
 
-## 📷 Screenshot
+## Screenshot
 
 ![App Preview](screenshot.png)
 
 ---
 
-## ⚙️ How to Run
+##  How to Run
 
 ```bash
 git clone https://github.com/kanmanirk/crop-recommendation-app.git
@@ -69,14 +69,14 @@ python app.py
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Kanmani R K**  
 [GitHub Profile](https://github.com/kanmanirk)
 
 ---
 
-## 📎 License
+##  License
 
 This project is free for educational use and open-source contributions.
 
